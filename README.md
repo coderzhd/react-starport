@@ -9,17 +9,23 @@
 
 在React中虽然在不同的路由下使用了同一个组件，但是在切换路由时组件会卸载和重新挂载，相当于先销毁旧组件再创建一个新组件，那么组件内部的状态就会消失，这意味着当用户在路由之间跳转时，同样的组件并不会跨路由共享。
 
-![img1](./ReadmeImg/page1.png)
+<div  align="center">    
+ <img src="./ReadmeImg/page1.png" width = "30%" alt="img1" />
+</div>
 
 因为它们是两个不同的实例，这意味着你无法直接为它们的添加补间动画。幸运的是，有一种叫做 [FLIP](https://github.com/googlearchive/flipjs) 的技术可以模拟不同组件之间的过渡动画。
 
-![img2](./ReadmeImg/page2.png)
+<div  align="center">    
+ <img src="./ReadmeImg/page2.png" width = "30%" alt="img1" />
+</div>
 
 在FLIP中我们页面中的组件**只是一个代理组件**，用于**接收一些位置信息和一些props**。而真正要渲染的组件，其实是用**绝对定位悬浮在整个App下的**，根据代理组件接收到的位置和样式信息，将悬浮的真正组件通过补间动画的形式移动到对应的位置。
 
 因此，FLIP 只解决了过渡的问题，我们仍然还是会有两个组件实例。在跳转过程中，组件的内部状态将会丢失。**解决方案**：等到补间动画结束之后，我们可以通过createPortal（vue中是teleport）将**组件传送到对应的代理组件中**
 
-![img3](./ReadmeImg/page3.png)
+<div  align="center">    
+ <img src="./ReadmeImg/page3.png" width = "30%" alt="img3" />
+</div>
 
 ## demo
 
@@ -85,7 +91,10 @@ export default memo(Home);
 
 渲染结果如下：
 
-![image-20230304004443983](./ReadmeImg/home.png)
+
+<div  align="center">    
+ <img src="./ReadmeImg/home.png" alt="home" />
+</div>
 
 点击Toggle Size:
 
