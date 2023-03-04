@@ -156,4 +156,4 @@ export default memo(TransferList);
 
 同时demo中实现了一些小功能，如：开启”debug“就可以提前在组件起飞后看到组件落地时的位置，还利用了styled-component实现了一键换肤。
 
-![](./ReadmeImg/总体.gif)
+![](./ReadmeImg/总体1.gif)
