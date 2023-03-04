@@ -98,7 +98,7 @@ export default memo(Home);
 
 点击Toggle Size:
 
-![](./ReadmeImg/首页改变大小.png)
+![](./ReadmeImg/首页改变大小.gif)
 
 接着渲染另一个界面：`TransferList`（路由为：”/foo“），将12个共享的`TheImage`组件分成了ListA与ListB两列
 
