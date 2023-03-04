@@ -1,5 +1,6 @@
-![logo](src/assets/img/logo.png)
-
+<div  align="center">    
+ <img src="src/assets/img/logo.png" width = "50%" alt="logo" />
+</div>
 如果你在React项目中在多个路由中使用了同一个组件，在这几个路由切换的时候要求这个组件拥有平滑的过渡动画，同时在切换路由时能够保存这个组件的状态，那么这个项目能够帮你解决这个让人头疼的问题。
 
 ## 实现思路
@@ -8,17 +9,23 @@
 
 在React中虽然在不同的路由下使用了同一个组件，但是在切换路由时组件会卸载和重新挂载，相当于先销毁旧组件再创建一个新组件，那么组件内部的状态就会消失，这意味着当用户在路由之间跳转时，同样的组件并不会跨路由共享。
 
-![img1](../../img/page1.png)
+<div  align="center">    
+ <img src="./ReadmeImg/page1.png" width = "30%" alt="img1" />
+</div>
 
 因为它们是两个不同的实例，这意味着你无法直接为它们的添加补间动画。幸运的是，有一种叫做 [FLIP](https://github.com/googlearchive/flipjs) 的技术可以模拟不同组件之间的过渡动画。
 
-![img2](../../img/page2.png)
+<div  align="center">    
+ <img src="./ReadmeImg/page2.png" width = "30%" alt="img1" />
+</div>
 
 在FLIP中我们页面中的组件**只是一个代理组件**，用于**接收一些位置信息和一些props**。而真正要渲染的组件，其实是用**绝对定位悬浮在整个App下的**，根据代理组件接收到的位置和样式信息，将悬浮的真正组件通过补间动画的形式移动到对应的位置。
 
 因此，FLIP 只解决了过渡的问题，我们仍然还是会有两个组件实例。在跳转过程中，组件的内部状态将会丢失。**解决方案**：等到补间动画结束之后，我们可以通过createPortal（vue中是teleport）将**组件传送到对应的代理组件中**
 
-![img3](../../img/page3.png)
+<div  align="center">    
+ <img src="./ReadmeImg/page3.png" width = "30%" alt="img3" />
+</div>
 
 ## demo
 
@@ -84,11 +91,14 @@ export default memo(Home);
 
 渲染结果如下：
 
-![image-20230304004443983](../../img/home.png)
+
+<div  align="center">    
+ <img src="./ReadmeImg/home.png" alt="home" />
+</div>
 
 点击Toggle Size:
 
-![](../../img/首页改变大小.gif)
+![](https://z4a.net/images/2023/03/04/66750b744a8c474ee89271f8d9144033.gif)
 
 接着渲染另一个界面：`TransferList`（路由为：”/foo“），将12个共享的`TheImage`组件分成了ListA与ListB两列
 
@@ -136,14 +146,14 @@ export default memo(TransferList);
 
 渲染结果如下：
 
-![image-20230304004648732](../../img/list.png)
+![image-20230304004648732](./ReadmeImg/list.png)
 
 切换路由的时候（”/“ 切换到 ”/foo“），会有平滑的补间动画，如下所示：
 
-![](../../img/路由跳转.gif)
+![](./ReadmeImg/路由跳转.gif)
 
 细心的你可能会发现图片下方的数字，数字表示的是共享组件内部存储的状态，可见路由跳转时共享组件内部状态没有改变。
 
 同时demo中实现了一些小功能，如：开启”debug“就可以提前在组件起飞后看到组件落地时的位置，还利用了styled-component实现了一键换肤。
 
-![](../../img/总体.gif)
+![](./ReadmeImg/总体.gif)
