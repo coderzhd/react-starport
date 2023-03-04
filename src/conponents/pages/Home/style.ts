@@ -43,6 +43,6 @@ export const HomeContainerWraper = styled.div`
     /* grid-gap: 20px; */
   }
   .item {
-    flex: 1 0 16.6%;
+    /* flex: 1 0 16.6%; */
   }
 `;

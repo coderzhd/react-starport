@@ -41,12 +41,13 @@ const Home: FC<IProps> = () => {
               key={item}
               port={item}
               className={
-                size ? "item w-15rem h-10rem m-2" : "item w-15rem h-12rem"
+                size ? "item w-18rem h-10rem m-2" : "item w-18rem h-12rem"
               }
             />
           )
         )}
       </div>
+      <div className="h-200px"></div>
     </HomeContainerWraper>
   );
 };
