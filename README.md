@@ -1,5 +1,6 @@
- <img src="src/assets/img/logo.png" width = "50%" alt="logo" align=center />
-
+<div  align="center">    
+ <img src="src/assets/img/logo.png" width = "50%" alt="logo" />
+</div>
 如果你在React项目中在多个路由中使用了同一个组件，在这几个路由切换的时候要求这个组件拥有平滑的过渡动画，同时在切换路由时能够保存这个组件的状态，那么这个项目能够帮你解决这个让人头疼的问题。
 
 ## 实现思路
