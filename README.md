@@ -157,3 +157,10 @@ export default memo(TransferList);
 同时demo中实现了一些小功能，如：开启”debug“就可以提前在组件起飞后看到组件落地时的位置，还利用了styled-component实现了一键换肤。
 
 ![](./ReadmeImg/总体1.gif)
+
+## 技术难点
+
+- 使用`KeepAlive`保证跨路由组件在路由切换时的存活
+- 结合portal完成组件的“起飞”和“落地”的功能
+- 使用useLayoutEffect解决起飞前页面闪烁的问题，这是因为卸载旧Proxy后应立刻进入起飞状态，而不是渲染后再起飞。
+- 使用windiCss解决styled-component起飞后样式消失的问题
